@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Data Visualization Tool</title>
+                    <link rel="stylesheet"
+                                        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+                    <link rel="stylesheet" href="assets/css/main.css"> <!-- Adjust path as necessary -->
+                    <style>
+                                        /* Custom CSS styles */
+                                        body {
+                                                            font-family: Arial, sans-serif;
+                                                            margin: 20px;
+                                                            padding: 0;
+                                                            background-color: #f4f4f4;
+                                        }
+
+                                        #wrapper {
+                                                            max-width: 1200px;
+                                                            margin: 0 auto;
+                                                            background-color: #fff;
+                                                            padding: 20px;
+                                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                        }
+
+                                        #header {
+                                                            background-color: #333;
+                                                            color: #fff;
+                                                            padding: 10px 20px;
+                                                            text-align: center;
+                                                            position: fixed;
+                                                            width: 100%;
+                                                            top: 0;
+                                                            z-index: 1000;
+                                        }
+
+                                        #header a {
+                                                            color: #fff;
+                                                            text-decoration: none;
+                                                            font-size: 1.2em;
+                                        }
+
+                                        nav {
+                                                            display: inline-block;
+                                                            float: right;
+                                        }
+
+                                        nav a {
+                                                            color: #fff;
+                                                            text-decoration: none;
+                                                            margin-left: 20px;
+                                                            position: relative;
+                                        }
+
+                                        nav a:hover {
+                                                            text-decoration: underline;
+                                        }
+
+                                        .dropdown-content {
+                                                            display: none;
+                                                            position: absolute;
+                                                            background-color: #333;
+                                                            min-width: 200px;
+                                                            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                                                            z-index: 1000;
+                                        }
+
+                                        .dropdown-content a {
+                                                            color: #fff;
+                                                            padding: 12px 16px;
+                                                            text-decoration: none;
+                                                            display: block;
+                                                            text-align: left;
+                                        }
+
+                                        .dropdown-content a:hover {
+                                                            background-color: #555;
+                                        }
+
+                                        /* Custom Styles for Specific Sections */
+                                        #main {
+                                                            margin-top: 80px;
+                                                            /* Adjust to fit under the fixed header */
+                                                            padding: 20px;
+                                        }
+
+                                        #chart {
+                                                            max-width: 800px;
+                                                            margin: 0 auto;
+                                                            background-color: #fff;
+                                                            padding: 20px;
+                                                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                                                            border-radius: 5px;
+                                        }
+
+                                        /* Responsive Design */
+                                        @media screen and (max-width: 768px) {
+                                                            nav {
+                                                                                display: block;
+                                                                                float: none;
+                                                                                text-align: center;
+                                                                                margin-top: 10px;
+                                                            }
+
+                                                            nav a {
+                                                                                display: inline-block;
+                                                                                margin-left: 0;
+                                                            }
+
+                                                            .dropdown-content {
+                                                                                position: relative;
+                                                                                /* Adjust dropdown for smaller screens */
+                                                                                min-width: auto;
+                                                                                box-shadow: none;
+                                                            }
+
+                                                            .dropdown:hover .dropdown-content {
+                                                                                display: block;
+                                                            }
+                                        }
+                    </style>
+</head>
+
+<body>
+                    <!-- Wrapper -->
+                    <div id="wrapper">
+
+                                        <!-- Header -->
+                                        <header id="header" class="alt">
+                                                            <a href="index.html" class="logo"><strong>KENNEDY
+                                                                                                    KIHARA</strong>
+                                                                                <span>- TEGEMEO CONSULTING</span></a>
+                                                            <nav>
+                                                                                <a href="#menu">Menu</a>
+                                                            </nav>
+                                        </header>
+
+                                        <!-- Menu -->
+                                        <nav id="menu">
+                                                            <ul class="links">
+                                                                                <li><a href="index.html">Home</a></li>
+                                                                                <li><a href="about.html">About Us</a>
+                                                                                </li>
+                                                                                <li><a href="services.html">Services</a>
+                                                                                </li>
+                                                                                <li><a href="case-studies.html">Case
+                                                                                                                        Studies</a>
+                                                                                </li>
+                                                                                <li><a href="resources.html">Resources</a>
+                                                                                </li>
+                                                                                <li><a href="contact.html">Contact
+                                                                                                                        Us</a>
+                                                                                </li>
+                                                                                <li><a href="careers.html">Careers</a>
+                                                                                </li>
+                                                            </ul>
+                                                            <ul class="actions stacked">
+                                                                                <li><a href="#" class="button primary fit">Get
+                                                                                                                        Started</a>
+                                                                                </li>
+                                                                                <li><a href="#" class="button fit">Log
+                                                                                                                        In</a>
+                                                                                </li>
+                                                            </ul>
+                                        </nav>
+
+                                        <!-- Main -->
+                                        <div id="main">
+
+                                                            <!-- Data Visualization Section -->
+                                                            <section id="data-visualization" class="main style1">
+                                                                                <div class="container">
+                                                                                                    <header
+                                                                                                                        class="major">
+                                                                                                                        <h2>Data Visualization
+                                                                                                                                            Tool
+                                                                                                                        </h2>
+                                                                                                    </header>
+
+                                                                                                    <!-- Placeholder for Data Visualization Tool Content -->
+                                                                                                    <div id="chart">
+                                                                                                                        <h3>Interactive Data Visualization</h3>
+                                                                                                                        <p>Explore dynamic charts, graphs, and maps that bring your data to life.</p>
+                                                                                                                        <p>Utilize advanced visualization libraries like Plotly.js or D3.js for engaging data
+                                                                                                                                            representations.</p>
+                                                                                                    </div>
+
+                                                                                </div>
+                                                            </section>
+
+                                        </div>
+
+                                        <!-- Contact -->
+                                        <section id="contact">
+                                                            <div class="inner">
+                                                                                <section>
+                                                                                                    <form method="post"
+                                                                                                                        action="#">
+                                                                                                                        <div
+                                                                                                                                            class="fields">
+                                                                                                                                            <div
+                                                                                                                                                                class="field half">
+                                                                                                                                                                <label
+                                                                                                                                                                                    for="name">Name</label>
+                                                                                                                                                                <input type="text" name="name"
+                                                                                                                                                                                    id="name" />
+                                                                                                                                            </div>
+                                                                                                                                            <div
+                                                                                                                                                                class="field half">
+                                                                                                                                                                <label
+                                                                                                                                                                                    for="email">Email</label>
+                                                                                                                                                                <input type="text" name="email"
+                                                                                                                                                                                    id="email" />
+                                                                                                                                            </div>
+                                                                                                                                            <div
+                                                                                                                                                                class="field">
+                                                                                                                                                                <label
+                                                                                                                                                                                    for="message">Message</label>
+                                                                                                                                                                <textarea name="message"
+                                                                                                                                                                                    id="message"
+                                                                                                                                                                                    rows="6"></textarea>
+                                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <ul
+                                                                                                                                            class="actions">
+                                                                                                                                            <li><input type="submit" value="Send Message"
+                                                                                                                                                                                    class="primary" />
+                                                                                                                                            </li>
+                                                                                                                                            <li><input type="reset"
+                                                                                                                                                                                    value="Clear" />
+                                                                                                                                            </li>
+                                                                                                                        </ul>
+                                                                                                    </form>
+                                                                                </section>
+                                                                                <section class="split">
+                                                                                                    <section>
+                                                                                                                        <div
+                                                                                                                                            class="contact-method">
+                                                                                                                                            <span
+                                                                                                                                                                class="icon solid alt fa-envelope"></span>
+                                                                                                                                            <h3>Email
+                                                                                                                                            </h3>
+                                                                                                                                            <a
+                                                                                                                                                                href="mailto:info@tegemeoconsulting.com">info@tegemeoconsulting.com</a>
+                                                                                                                        </div>
+                                                                                                    </section>
+                                                                                                    <section>
+                                                                                                                        <div
+                                                                                                                                            class="contact-method">
+                                                                                                                                            <span
+                                                                                                                                                                class="icon solid alt fa-phone"></span>
+                                                                                                                                            <h3>Phone
+                                                                                                                                            </h3>
+                                                                                                                                            <span>(+254)
+                                                                                                                                                                705-055474</span>
+                                                                                                                        </div>
+                                                                                                    </section>
+                                                                                                    <section>
+                                                                                                                        <div
+                                                                                                                                            class="contact-method">
+                                                                                                                                            <span
+                                                                                                                                                                class="icon solid alt fa-home"></span>
+                                                                                                                                            <h3>Address
+                                                                                                                                            </h3>
+                                                                                                                                            <span>590 Medhurst Lodge,
+                                                                                                                                                                Suite
+                                                                                                                                                                200<br />Columbia,
+                                                                                                                                                                Missouri
+                                                                                                                                                                85951-2329<br />United
+                                                                                                                                                                States
+                                                                                                                                                                of
+                                                                                                                                                                America</span>
+                                                                                                                        </div>
+                                                                                                    </section>
+                                                                                </section>
+                                                            </div>
+                                        </section>
+
+                                        <!-- Footer -->
+                                        <footer id="footer">
+                                                            <div class="inner">
+                                                                                <ul class="icons">
+                                                                                                    <li><a href="#" class="icon brands alt fa-twitter"><span
+                                                                                                                                                                class="label">Twitter</span></a>
+                                                                                                    </li>
+                                                                                                    <li><a href="#" class="icon brands alt fa-facebook-f"><span
+                                                                                                                                                                class="label">Facebook</span></a>
+                                                                                                    </li>
+                                                                                                    <li><a href="#" class="icon brands alt fa-instagram"><span
+                                                                                                                                                                class="label">Instagram</span></a>
+                                                                                                    </li>
+                                                                                                    <li><a href="#" class="icon brands alt fa-github"><span
+                                                                                                                                                                class="label">GitHub</span></a>
+                                                                                                    </li>
+                                                                                                    <li><a href="#" class="icon brands alt fa-linkedin-in"><span
+                                                                                                                                                                class="label">LinkedIn</span></a>
+                                                                                                    </li>
+                                                                                </ul>
+                                                                                <ul class="copyright">
+                                                                                                    <li>&copy; 2024 TEGEMEO
+                                                                                                                        CONSULTING
+                                                                                                    </li>
+                                                                                                    <li>Design: <a href="https://html5up.net">HTML5
+                                                                                                                                            UP</a>
+                                                                                                    </li>
+                                                                                </ul>
+                                                            </div>
+                                        </footer>
+
+                    </div>
+
+                    <!-- Scripts -->
+                    <script src="assets/js/jquery.min.js"></script>
+                    <script src="assets/js/jquery.scrolly.min.js"></script>
+                    <script src="assets/js/jquery.scrollex.min.js"></script>
+                    <script src="assets/js/browser.min.js"></script>
+                    <script src="assets/js/breakpoints.min.js"></script>
+                    <script src="assets/js/util.js"></script>
+                    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
